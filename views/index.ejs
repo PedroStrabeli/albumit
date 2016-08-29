@@ -1,25 +1,41 @@
 <!DOCTYPE html>
-<html lang="pt" ng-app="instagralbum">
+<html lang="pt" ng-app="albumit">
 <head>
 	<meta charset="utf-8">
-    <title>{{title}}</title>
+    <!-- Page title set in pageTitle directive -->
+    <title page-title></title>
     <meta name="keywords" content="">
 
     <!-- Bootstrap and Font Awesome css -->
     <link rel="stylesheet" href="stylesheets/font-awesome-4.6.3/css/font-awesome.min.css">
     <link rel="stylesheet" href="bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" href="//code.ionicframework.com/ionicons/1.5.2/css/ionicons.min.css">
 
     <!-- Favicon and apple touch icons-->
     <link rel="shortcut icon" href="img/favicon.ico" type="image/x-icon" />
 </head>
 <body>
+
+	<div class="navbar navbar-default navbar-static-top">
+	  <div class="container">
+	    <ul class="nav navbar-nav">
+	      <a href="/" class="navbar-brand"><i class="ion-images"></i> AlbumIt!</a>
+	      <li><a href="#/">Home</a></li>
+	      <li><a href="#/login">Log in</a></li>
+	      <li><a ng-click="logout()" href="">Logout</a></li>
+	    </ul>
+	  </div>
+	</div>
+
 	<div>
-		<div ui-view></div>
+		<div ng-view></div>
 	</div>
 
 
 	<script src="js/angular/angular.min.js"></script>
 		<script src="js/angular/angular-resource.min.js"></script>
+		<script src="js/angular/angular-messages.min.js"></script>
+		<script src="js/angular/angular-route.min.js"></script>
 		<script src="js/ui-router/angular-ui-router.js"></script>
 		<script src="js/angular/dirPagination.js"></script>
 
@@ -32,10 +48,18 @@
 		<script src="js/ui-bootstrap/ui-bootstrap-tpls-2.0.0.min.js"></script>
 		<script src="Bootstrap/js/bootstrap.js"></script>
 
+		<!-- Satellizer -->
+		<script src="js/satellizer/satellizer.min.js"></script>
+
 		<!-- APP -->
 		<script src="js/ng-app.js"></script>
 		<script src="js/config.js"></script>
 
+		<!--Directives-->
+		<script src="js/directives.js"></script>
+
+		<!-- Factories -->
+		<script src="js/factories/constants.factory.js"></script>
 
 		<!-- Services -->
 		<!--<script src="js/services/login_service.js"></script>-->
@@ -43,6 +67,8 @@
 		<!-- Controllers -->
 		<script src="js/controllers/index.controller.js"></script>
 		<script src="js/controllers/login.controller.js"></script>
+		<script src="js/controllers/navbar.controller.js"></script>
+		<script src="js/controllers/detail.controller.js"></script>
 </body>
 
 </html>

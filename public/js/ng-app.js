@@ -1,4 +1,4 @@
 angular
-    .module('instagralbum',['ui.router', 'ui.mask', 'ui.bootstrap'])
+    .module('albumit',['ngRoute', 'ngMessages', 'satellizer'])
 
-var app= angular.module('instagralbum');
+var app= angular.module('albumit');
