@@ -1,6 +1,6 @@
 <div class="container">
 
-  <div ng-if="isAuthenticated() && currentUser.username">
+  <!--<div ng-if="isAuthenticated() && currentUser.username">
     <div class="row">
       <div ng-repeat="photo in photos" class="col-lg-2 col-sm-3 col-xs-4">
         <a href="#/photo/{{photo.id}}">
@@ -8,20 +8,34 @@
         </a>
       </div>
     </div>
-  </div>
+  </div>-->
 
-  <div ng-if="!isAuthenticated()">
+  <div ><!--ng-if="!isAuthenticated()">-->
     <div class="jumbotron">
       <h2><i class="ion-images"></i> AlbumIt</h2>
-      <p>This is a basic Instagram clone powered by <strong>Satellizer</strong>. To continue, please log in with your Instagram account or create a new email account.</p>
+      <p>This is a Photoalbum for your Instagram page. Search the hashtags you love and save the photos for later!</p>
       <p>
         <a class="btn btn-lg btn-success" href="#/login"><i class="ion-log-in"></i> Log in</a>
-        
       </p>
+      <p>Search for a hashtag here. Press enter to search (try drinks, vacation, beach, ocean, batman)</p>
+      <form ng-submit="onSubmit()">
+        <input name="Search" placeholder="Search for a Hashtag" ng-model="search.hashtag">
+        <input class="btn" type="submit" id="submit" value="Search" />
+      </form>
     </div>
   </div>
 
-  <div ng-if="isAuthenticated() && !currentUser.username" class="center-form panel">
+<div ><!--ng-if="!isAuthenticated()">-->
+    <div class="jumbotron" ng-show="list.length>0">
+      <h3><i class="ion-images"></i> Result</h3>
+      <ul class="list-group row" ng-repeat="item in list track by $index">
+        <li class="list-group-item col-xs-4"><img src="{{item.images.thumbnail.url}}" width="{{item.images.thumbnail.width}}" height="{{item.images.thumbnail.height}}">{{item.caption.text}}<input class="btn" type="button" value="AlbumIt" ng-click="savePhoto(item)"></li>
+      </ul>
+    </div>
+  </div>
+
+
+  <!--<div ng-if="isAuthenticated() && !currentUser.username" class="center-form panel">
     <div class="panel-body">
       <h5 class="text-center"><i class="ion-link"></i> Link Account</h5>
       <p>To complete the registration process you must link your Instagram account.</p>
@@ -29,6 +43,6 @@
         <i class="ion-social-instagram"></i> Sign in with Instagram
       </button>
     </div>
-  </div>
+  </div>-->
 
 </div>

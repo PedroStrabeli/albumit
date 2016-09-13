@@ -1,0 +1,19 @@
+
+<div ><!--ng-if="!isAuthenticated()">-->
+    <div class="jumbotron">
+      <h3><i class="ion-images"></i> Album</h3>
+      <div class="jumbotron" ng-show="album.length==0 || !album">
+      <h3>Você não possui fotos no seu Álbum :(</h3>
+    </div>
+      <ul class="list-group row" ng-repeat="item in album track by $index">
+        <li class="list-group-item col-xs-6">
+        	<img src="{{item.images.thumbnail.url}}" width="{{item.images.thumbnail.width}}" height="{{item.images.thumbnail.height}}">{{item.caption.text}}
+        	<p>Tags:</p>
+        	<ul>
+        		<li ng-repeat="h in item.tags">{{h}}</li>
+        	</ul>
+        	<input class="btn" type="button" value="Remover" ng-click="deletePhoto(item._id)">
+        </li>
+      </ul>
+    </div>
+  </div>

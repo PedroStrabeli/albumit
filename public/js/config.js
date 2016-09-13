@@ -12,6 +12,10 @@ var config = function($routeProvider, $authProvider){
       templateUrl: 'pages/detail.html',
       controller: 'detailCtrl'
     })
+    .when('/my-album', {
+      templateUrl: 'pages/album.html',
+      controller: 'albumCtrl'
+    })
     .otherwise('/');
 
 

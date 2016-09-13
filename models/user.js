@@ -1,3 +1,5 @@
+var mongoose = require('mongoose');
+
 var User = mongoose.model('User', new mongoose.Schema({
   instagramId: { type: String, index: true },
   email: { type: String, unique: true, lowercase: true },
