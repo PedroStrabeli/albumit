@@ -16,10 +16,10 @@ Para o funcionamento correto do aplicativo, deve-se ter o MongoDB instalado.
 
 
 MELHORIAS:
-	Autenticação e acesso ao API do Instagram
-	Checagem se a foto já existe no álbum antes de adicioná-la
-	Melhorias visuais e funcionais na interface
-	Gerenciar suas fotos em álbuns diferentes
-	Conquistar o mundo
-	???
-	Profit
+	Autenticação e acesso ao API do Instagram;
+	Checagem se a foto já existe no álbum antes de adicioná-la;
+	Melhorias visuais e funcionais na interface;
+	Gerenciar suas fotos em álbuns diferentes;
+	Conquistar o mundo;
+	???;
+	Profit.
